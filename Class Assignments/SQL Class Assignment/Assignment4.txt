@@ -1,0 +1,33 @@
+-- Set III Queries
+
+-- 1. List unique departments of the EMP table.
+SELECT DISTINCT DEPTNO FROM EMP;
+
+-- 2. List the name and salary of employees who earn more than 1500 and are in department 10 or 30.
+-- Label the columns Employee and Monthly Salary respectively.
+SELECT ENAME AS EMPLOYEE, SAL AS [MONTHLY SALARY], DEPTNO FROM EMP WHERE SAL > 1500 AND DEPTNO IN (10,30);
+
+-- 3. Display the name, job, and salary of all the employees whose job is MANAGER or ANALYST and their salary is not equal to 1000, 3000, or 5000.
+SELECT ENAME, JOB, SAL FROM EMP WHERE JOB IN ('MANAGER', 'ANALYST') AND SAL NOT IN (1000, 3000, 5000);
+
+-- 4. Display the name, salary, and commission for all employees whose commission amount is greater than their salary increased by 10%.
+SELECT ENAME, SAL, COMM FROM EMP WHERE COMM > SAL * 1.10;
+
+-- 5. Display the name of all employees who have two Ls in their name and are in department 30 or their manager is 7782.
+SELECT ENAME FROM EMP WHERE ENAME LIKE '%L%L%' AND (DEPTNO = 30 OR MGR_ID = 7782);
+
+-- 6. Display the names of employees with experience of over 30 years and under 40 years. Count the total number of employees.
+SELECT ENAME, DATEDIFF(YEAR, HIREDATE, GETDATE()) AS Experience FROM EMP WHERE DATEDIFF(YEAR, HIREDATE, GETDATE()) BETWEEN 30 AND 40;
+SELECT COUNT(*) AS TotalEmployees FROM EMP WHERE DATEDIFF(YEAR, HIREDATE, GETDATE()) BETWEEN 30 AND 40;
+
+-- 7. Retrieve the names of departments in ascending order and their employees in descending order.
+SELECT D.DNAME, E.ENAME FROM DEPT D JOIN EMP E ON D.DEPTNO = E.DEPTNO ORDER BY D.DNAME ASC, E.ENAME DESC;
+
+-- 8. Find out experience of MILLER.
+SELECT ENAME, DATEDIFF(YEAR, HIREDATE, GETDATE()) AS Experience FROM EMP WHERE ENAME = 'MILLER';
+
+-- 9. Write a query to display all employee information where ENAME contains 5 or more characters.
+SELECT * FROM EMP WHERE LEN(ENAME) >= 5;
+
+-- 10. Copy EMPNO, ENAME of all employees from EMP table who work for DEPT 10 into a new table called EMP10.
+SELECT EMPNO, ENAME INTO EMP10 FROM EMP WHERE DEPTNO = 10;
