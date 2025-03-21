@@ -21,14 +21,14 @@ SELECT L.LocationID,
        COUNT(C.CourierID) AS TotalDelivered
 FROM Location L
 LEFT JOIN Courier C ON C.DeliveryLocationID = L.LocationID  
-AND C.Status = 'Delivered'  -- Ensure only delivered couriers are counted
+AND C.Status = 'Delivered'  
 GROUP BY L.LocationID, L.LocationName
 ORDER BY TotalDelivered DESC;
 
 --17. Find the courier with the highest average delivery time:
 SELECT TOP 1 C.CourierID, C.TrackingNumber, AVG(DATEDIFF(DAY, C.SentDate, C.DeliveryDate)) AS AvgDeliveryTime
 FROM Courier C
-WHERE C.DeliveryDate IS NOT NULL  -- Exclude undelivered couriers
+WHERE C.DeliveryDate IS NOT NULL
 GROUP BY C.CourierID, C.TrackingNumber
 ORDER BY AvgDeliveryTime DESC;
 
