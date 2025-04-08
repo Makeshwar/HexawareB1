@@ -8,36 +8,48 @@ namespace CourierManagementSystem.DB
 {
     public class CourierServiceDb
     {
-        // Insert a new courier record
+        //Insert Courier
         public void InsertCourier(Courier courier)
         {
-            string query = @"INSERT INTO Courier 
-                (SenderName, SenderAddress, ReceiverName, ReceiverAddress, Weight, Status, TrackingNumber, SentDate, DeliveryDate, AssignedEmployeeID, DeliveryLocationID, ServiceID, UserId)
-                VALUES 
-                (@SenderName, @SenderAddress, @ReceiverName, @ReceiverAddress, @Weight, @Status, @TrackingNumber, @SentDate, @DeliveryDate, @AssignedEmployeeID, @DeliveryLocationID, @ServiceID, @UserId)";
+            string insertQuery = @"INSERT INTO Courier 
+        (SenderName, SenderAddress, ReceiverName, ReceiverAddress, Weight, Status, TrackingNumber, SentDate, DeliveryDate, AssignedEmployeeID, DeliveryLocationID, ServiceID, UserId)
+        VALUES 
+        (@SenderName, @SenderAddress, @ReceiverName, @ReceiverAddress, @Weight, @Status, @TrackingNumber, @SentDate, @DeliveryDate, @AssignedEmployeeID, @DeliveryLocationID, @ServiceID, @UserId)";
 
             using var connection = DBConnection.GetConnection("config/db.properties");
-            using (SqlCommand cmd = new SqlCommand(query, connection))
+            using (SqlCommand insertCmd = new SqlCommand(insertQuery, connection))
             {
-                cmd.Parameters.AddWithValue("@SenderName", courier.SenderName);
-                cmd.Parameters.AddWithValue("@SenderAddress", courier.SenderAddress);
-                cmd.Parameters.AddWithValue("@ReceiverName", courier.ReceiverName);
-                cmd.Parameters.AddWithValue("@ReceiverAddress", courier.ReceiverAddress);
-                cmd.Parameters.AddWithValue("@Weight", courier.Weight);
-                cmd.Parameters.AddWithValue("@Status", courier.Status);
-                cmd.Parameters.AddWithValue("@TrackingNumber", courier.TrackingNumber);
-                cmd.Parameters.AddWithValue("@SentDate", courier.SentDate);
-                cmd.Parameters.AddWithValue("@DeliveryDate", courier.DeliveryDate);
-                cmd.Parameters.AddWithValue("@AssignedEmployeeID", courier.AssignedStaffId);
-                cmd.Parameters.AddWithValue("@DeliveryLocationID", courier.DeliveryLocationID);
-                cmd.Parameters.AddWithValue("@ServiceID", courier.ServiceID);
-                cmd.Parameters.AddWithValue("@UserId", courier.UserId);
+                insertCmd.Parameters.AddWithValue("@SenderName", courier.SenderName);
+                insertCmd.Parameters.AddWithValue("@SenderAddress", courier.SenderAddress);
+                insertCmd.Parameters.AddWithValue("@ReceiverName", courier.ReceiverName);
+                insertCmd.Parameters.AddWithValue("@ReceiverAddress", courier.ReceiverAddress);
+                insertCmd.Parameters.AddWithValue("@Weight", courier.Weight);
+                insertCmd.Parameters.AddWithValue("@Status", courier.Status);
+                insertCmd.Parameters.AddWithValue("@TrackingNumber", courier.TrackingNumber);
+                insertCmd.Parameters.AddWithValue("@SentDate", courier.SentDate);
+                insertCmd.Parameters.AddWithValue("@DeliveryDate", courier.DeliveryDate);
+                insertCmd.Parameters.AddWithValue("@AssignedEmployeeID", courier.AssignedStaffId);
+                insertCmd.Parameters.AddWithValue("@DeliveryLocationID", courier.DeliveryLocationID);
+                insertCmd.Parameters.AddWithValue("@ServiceID", courier.ServiceID);
+                insertCmd.Parameters.AddWithValue("@UserId", courier.UserId);
 
                 try
                 {
                     connection.Open();
-                    cmd.ExecuteNonQuery();
+                    insertCmd.ExecuteNonQuery();
                     Console.WriteLine("Courier inserted successfully.");
+
+                    // Display the inserted record
+                    string selectQuery = "SELECT * FROM Courier WHERE TrackingNumber = @TrackingNumber";
+                    SqlCommand selectCmd = new SqlCommand(selectQuery, connection);
+                    selectCmd.Parameters.AddWithValue("@TrackingNumber", courier.TrackingNumber);
+
+                    using SqlDataReader reader = selectCmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        Console.WriteLine("Inserted Courier Details:");
+                        Console.WriteLine($"TrackingNumber: {reader["TrackingNumber"]}, Sender: {reader["SenderName"]}, Receiver: {reader["ReceiverName"]}, Status: {reader["Status"]}");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -45,23 +57,41 @@ namespace CourierManagementSystem.DB
                 }
             }
         }
-
-        // Update courier status by tracking number
+        //Update Courier
         public void UpdateCourierStatus(string trackingNumber, string status)
         {
-            string query = "UPDATE Courier SET Status = @Status WHERE TrackingNumber = @TrackingNumber";
+            string updateQuery = "UPDATE Courier SET Status = @Status WHERE TrackingNumber = @TrackingNumber";
 
             using var connection = DBConnection.GetConnection("config/db.properties");
-            using (SqlCommand cmd = new SqlCommand(query, connection))
+            using (SqlCommand updateCmd = new SqlCommand(updateQuery, connection))
             {
-                cmd.Parameters.AddWithValue("@Status", status);
-                cmd.Parameters.AddWithValue("@TrackingNumber", trackingNumber);
+                updateCmd.Parameters.AddWithValue("@Status", status);
+                updateCmd.Parameters.AddWithValue("@TrackingNumber", trackingNumber);
 
                 try
                 {
                     connection.Open();
-                    cmd.ExecuteNonQuery();
-                    Console.WriteLine("Courier status updated successfully.");
+                    int rowsAffected = updateCmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Courier status updated successfully.");
+
+                        // Display the updated record
+                        string selectQuery = "SELECT * FROM Courier WHERE TrackingNumber = @TrackingNumber";
+                        SqlCommand selectCmd = new SqlCommand(selectQuery, connection);
+                        selectCmd.Parameters.AddWithValue("@TrackingNumber", trackingNumber);
+
+                        using SqlDataReader reader = selectCmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            Console.WriteLine("Updated Courier Details:");
+                            Console.WriteLine($"TrackingNumber: {reader["TrackingNumber"]}, Status: {reader["Status"]}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No courier found with that tracking number.");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -69,7 +99,6 @@ namespace CourierManagementSystem.DB
                 }
             }
         }
-
         // Get a courier by tracking number
         public Courier GetCourierByTrackingNumber(string trackingNumber)
         {

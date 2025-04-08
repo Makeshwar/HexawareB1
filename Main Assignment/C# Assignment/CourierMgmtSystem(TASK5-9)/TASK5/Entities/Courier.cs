@@ -1,4 +1,5 @@
-﻿using System;
+﻿//TASK 5 Object Oriented Programming
+//Courier Class
 
 namespace CourierManagementSystem.Entities
 {
@@ -22,7 +23,6 @@ namespace CourierManagementSystem.Entities
         public Courier()
 
         {
-            status = "In Transit";
             sentDate = DateTime.Now;
             DeliveryDate = DateTime.Now.AddDays(3);
         }
