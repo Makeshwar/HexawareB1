@@ -43,11 +43,11 @@ class CourierApp
                     Console.Write("Weight (kg): ");
                     newCourier.Weight = double.Parse(Console.ReadLine());
 
-                    Console.Write("Status: ");
-                    newCourier.Status = Console.ReadLine();
-
                     Console.Write("Tracking Number: ");
                     newCourier.TrackingNumber = Console.ReadLine();
+
+                    Console.Write("Status: ");
+                    newCourier.Status = Console.ReadLine();
 
                     Console.Write("Assigned Staff ID: ");
                     newCourier.AssignedStaffId = int.Parse(Console.ReadLine());
