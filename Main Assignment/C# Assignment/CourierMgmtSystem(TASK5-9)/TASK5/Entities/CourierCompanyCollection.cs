@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using CourierManagementSystem.Entities;
 
-namespace entities
+namespace CourierManagementSystem.Entities
 {
     public class CourierCompanyCollection
     {
@@ -10,6 +9,7 @@ namespace entities
         public List<Employee> EmployeeDetails { get; set; }
         public List<Location> LocationDetails { get; set; }
 
+        // Default constructor
         public CourierCompanyCollection()
         {
             CourierDetails = new List<Courier>();
@@ -17,9 +17,12 @@ namespace entities
             LocationDetails = new List<Location>();
         }
 
-        public CourierCompanyCollection(string companyName) : this()
+        public CourierCompanyCollection(string companyName)
         {
-            this.CompanyName = companyName;
+            CompanyName = companyName;
+            CourierDetails = new List<Courier>();
+            EmployeeDetails = new List<Employee>();
+            LocationDetails = new List<Location>();
         }
     }
 }

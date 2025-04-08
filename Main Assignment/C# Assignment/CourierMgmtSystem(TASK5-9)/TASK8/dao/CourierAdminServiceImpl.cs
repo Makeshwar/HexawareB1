@@ -1,6 +1,5 @@
 ﻿using System;
 using CourierManagementSystem.Entities;
-using entities;
 using myexceptions;
 
 namespace CourierManagementSystem.dao
@@ -12,9 +11,7 @@ namespace CourierManagementSystem.dao
         public int AddCourierStaff(Employee obj)
         {
             obj.EmployeeID = employeeIdSeed++;
-
-            Console.WriteLine("Simulated: Employee added to array.");
-
+            companyObj.EmployeeDetails.Add(obj);
             return obj.EmployeeID;
         }
     }

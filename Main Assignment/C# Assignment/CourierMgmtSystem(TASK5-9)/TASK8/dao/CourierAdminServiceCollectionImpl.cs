@@ -1,6 +1,5 @@
 ﻿using System;
 using CourierManagementSystem.Entities;
-using entities;
 using myexceptions;
 
 namespace CourierManagementSystem.dao
@@ -11,6 +10,9 @@ namespace CourierManagementSystem.dao
 
         public int AddCourierStaff(Employee obj)
         {
+            if (obj == null)
+                throw new ArgumentNullException(nameof(obj), "Employee object cannot be null");
+
             obj.EmployeeID = employeeIdSeed++;
             companyObj.EmployeeDetails.Add(obj);
             return obj.EmployeeID;

@@ -11,6 +11,6 @@ namespace CourierManagementSystem.dao
 
         bool CancelOrder(string trackingNumber);
 
-        List<Courier> GetAssignedOrder(long courierStaffId);
+        List<Courier> GetAssignedOrder(int courierStaffId);
     }
 }

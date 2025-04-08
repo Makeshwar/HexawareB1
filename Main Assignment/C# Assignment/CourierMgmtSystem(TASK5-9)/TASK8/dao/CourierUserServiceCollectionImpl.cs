@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using CourierManagementSystem.Entities;
-using entities;
 using myexceptions;
 
 namespace CourierManagementSystem.dao
@@ -9,62 +9,56 @@ namespace CourierManagementSystem.dao
     public class CourierUserServiceCollectionImpl : ICourierUserService
     {
         public CourierCompanyCollection companyObj;
-        private static int trackingSeed = 1000;
-
-        private Dictionary<string, Courier> trackingMap;
 
         public CourierUserServiceCollectionImpl()
         {
             companyObj = new CourierCompanyCollection("Hexaware Courier");
-            trackingMap = new Dictionary<string, Courier>();
         }
 
         public string PlaceOrder(Courier courierObj)
         {
-            string trackingNumber = "TRK" + trackingSeed++;
-            courierObj.TrackingNumber = trackingNumber;
-            courierObj.Status = "YetToTransit";
-
             companyObj.CourierDetails.Add(courierObj);
-            trackingMap[trackingNumber] = courierObj;
 
-            return trackingNumber;
+            return courierObj.TrackingNumber;
         }
 
         public string GetOrderStatus(string trackingNumber)
         {
-            if (!trackingMap.ContainsKey(trackingNumber))
+            var courier = companyObj.CourierDetails
+                .FirstOrDefault(c => c.TrackingNumber == trackingNumber);
+
+            if (courier == null)
             {
-                throw new TrackingNumberNotFoundException($"Tracking number {trackingNumber} not found.");
+                throw new TrackingNumberNotFoundException("Tracking number not found.");
             }
 
-            return trackingMap[trackingNumber].Status;
+            return courier.Status;
         }
 
         public bool CancelOrder(string trackingNumber)
         {
-            if (!trackingMap.ContainsKey(trackingNumber))
+            var courier = companyObj.CourierDetails
+                .FirstOrDefault(c => c.TrackingNumber == trackingNumber);
+
+            if (courier == null)
             {
-                throw new TrackingNumberNotFoundException($"Cannot cancel. Tracking number {trackingNumber} not found.");
+                throw new TrackingNumberNotFoundException("Cancel failed: tracking number not found.");
             }
 
-            Courier c = trackingMap[trackingNumber];
-            companyObj.CourierDetails.Remove(c);
-            trackingMap.Remove(trackingNumber);
+            if (courier.Status.ToLower() == "delivered")
+            {
+                return false; 
+            }
+
+            courier.Status = "Cancelled";
             return true;
         }
 
-        public List<Courier> GetAssignedOrder(long courierStaffId)
+        public List<Courier> GetAssignedOrder(int courierStaffId)
         {
-            List<Courier> assignedOrders = new List<Courier>();
-            foreach (var courier in companyObj.CourierDetails)
-            {
-                if (courier.UserId == courierStaffId)
-                {
-                    assignedOrders.Add(courier);
-                }
-            }
-            return assignedOrders;
+            return companyObj.CourierDetails
+                .Where(c => c.AssignedStaffId == courierStaffId)
+                .ToList();
         }
     }
 }

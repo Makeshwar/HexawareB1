@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using CourierManagementSystem.Entities;
-using entities;
 using myexceptions;
 
 namespace CourierManagementSystem.dao
@@ -18,19 +17,12 @@ namespace CourierManagementSystem.dao
 
         public string PlaceOrder(Courier courierObj)
         {
-            string trackingNumber = "TRK" + trackingSeed++;
-            courierObj.TrackingNumber = trackingNumber;
-            courierObj.Status = "YetToTransit";
-
-           
-            Console.WriteLine("Simulated: Courier added to CourierCompany object array.");
-
-            return trackingNumber;
+            return "TRK" + trackingSeed++;
         }
 
         public string GetOrderStatus(string trackingNumber)
         {
-            throw new TrackingNumberNotFoundException("Tracking number not found (object array simulation).");
+            throw new TrackingNumberNotFoundException("Tracking number not found.");
         }
 
         public bool CancelOrder(string trackingNumber)
@@ -38,9 +30,9 @@ namespace CourierManagementSystem.dao
             throw new TrackingNumberNotFoundException("Cancel failed: tracking number not found.");
         }
 
-        public List<Courier> GetAssignedOrder(long courierStaffId)
+        public List<Courier> GetAssignedOrder(int courierStaffId)
         {
-            return new List<Courier>(); // Simulated empty list
+            return new List<Courier>();
         }
     }
 }
