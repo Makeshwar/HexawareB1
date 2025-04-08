@@ -24,7 +24,7 @@ namespace CourierManagementSystem.DB
                 insertCmd.Parameters.AddWithValue("@ReceiverName", courier.ReceiverName);
                 insertCmd.Parameters.AddWithValue("@ReceiverAddress", courier.ReceiverAddress);
                 insertCmd.Parameters.AddWithValue("@Weight", courier.Weight);
-                insertCmd.Parameters.AddWithValue("@Status", courier.Status);
+                insertCmd.Parameters.AddWithValue("@Status", string.IsNullOrEmpty(courier.Status) ? "In Transit" : courier.Status);
                 insertCmd.Parameters.AddWithValue("@TrackingNumber", courier.TrackingNumber);
                 insertCmd.Parameters.AddWithValue("@SentDate", courier.SentDate);
                 insertCmd.Parameters.AddWithValue("@DeliveryDate", courier.DeliveryDate);
@@ -48,7 +48,7 @@ namespace CourierManagementSystem.DB
                     if (reader.Read())
                     {
                         Console.WriteLine("Inserted Courier Details:");
-                        Console.WriteLine($"TrackingNumber: {reader["TrackingNumber"]}, Sender: {reader["SenderName"]}, Receiver: {reader["ReceiverName"]}, Status: {reader["Status"]}");
+                        Console.WriteLine($"TrackingNumber: {reader["TrackingNumber"]}, Sender: {reader["SenderName"]},SenderAddress: {reader["SenderAddress"]}, Receiver: {reader["ReceiverName"]},ReceiverAddress: {reader["ReceiverAddress"]}, Status: {reader["Status"]}");
                     }
                 }
                 catch (Exception ex)
@@ -85,7 +85,7 @@ namespace CourierManagementSystem.DB
                         if (reader.Read())
                         {
                             Console.WriteLine("Updated Courier Details:");
-                            Console.WriteLine($"TrackingNumber: {reader["TrackingNumber"]}, Status: {reader["Status"]}");
+                            Console.WriteLine($"TrackingNumber: {reader["TrackingNumber"]}, Sender: {reader["SenderName"]}, SenderAddress: {reader["SenderAddress"]}, Receiver: {reader["ReceiverName"]}, ReceiverAddress: {reader["ReceiverAddress"]}, Status: {reader["Status"]}");
                         }
                     }
                     else
@@ -225,5 +225,7 @@ namespace CourierManagementSystem.DB
                 }
             }
         }
+
+
     }
 }
