@@ -1,4 +1,7 @@
-﻿namespace CourierManagementSystem.Entities
+﻿//TASK 5 Object Oriented Programming
+//User Class
+
+namespace CourierManagementSystem.Entities
 {
     public class User
     {

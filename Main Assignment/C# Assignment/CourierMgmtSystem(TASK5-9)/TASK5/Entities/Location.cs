@@ -1,4 +1,7 @@
-﻿using System;
+﻿//TASK 5 Object Oriented Programming
+//Location Class
+
+using System;
 namespace CourierManagementSystem.Entities
 {
 	public class Location

@@ -1,4 +1,7 @@
-﻿using System;
+﻿//TASK 5 Object Oriented Programming
+//Payment Class
+
+using System;
 namespace CourierManagementSystem.Entities
 {
 	public class Payment
