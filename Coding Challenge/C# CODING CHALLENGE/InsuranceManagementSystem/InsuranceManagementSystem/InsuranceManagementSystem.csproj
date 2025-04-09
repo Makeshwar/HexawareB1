@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="entity\" />
+    <None Remove="dao\" />
+    <None Remove="util\" />
+    <None Remove="config\" />
+    <None Remove="config\db.properties" />
+    <None Remove="myexceptions\" />
+    <None Remove="mainmod\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="entity\" />
+    <Folder Include="dao\" />
+    <Folder Include="util\" />
+    <Folder Include="config\" />
+    <Folder Include="myexceptions\" />
+    <Folder Include="mainmod\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\db.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+  </ItemGroup>
+</Project>

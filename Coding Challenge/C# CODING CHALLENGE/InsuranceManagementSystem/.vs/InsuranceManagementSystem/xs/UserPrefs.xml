@@ -1,0 +1,44 @@
+﻿<Properties StartupConfiguration="{3E969E5E-E11B-45FC-A5D0-59402549ADFB}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="InsuranceManagementSystem/config/db.properties">
+    <Files>
+      <File FileName="InsuranceManagementSystem/entity/Users.cs" />
+      <File FileName="InsuranceManagementSystem/entity/Policy.cs" />
+      <File FileName="InsuranceManagementSystem/entity/Client.cs" />
+      <File FileName="InsuranceManagementSystem/entity/Claim.cs" />
+      <File FileName="InsuranceManagementSystem/entity/Payment.cs" />
+      <File FileName="InsuranceManagementSystem/dao/IPolicyService.cs" />
+      <File FileName="InsuranceManagementSystem/dao/InsuranceServiceImpl.cs" Line="101" Column="2" />
+      <File FileName="InsuranceManagementSystem/util/DBConnection.cs" Line="18" Column="2" />
+      <File FileName="InsuranceManagementSystem/util/PropertyUtil.cs" Line="20" Column="1" />
+      <File FileName="InsuranceManagementSystem/config/db.properties" Line="5" Column="28" />
+      <File FileName="InsuranceManagementSystem/myexceptions/PolicyNotFoundException.cs" Line="8" Column="46" />
+      <File FileName="InsuranceManagementSystem/mainmod/MainModule.cs" Line="19" Column="65" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="InsuranceManagementSystem" expanded="True">
+            <Node name="InsuranceManagementSystem" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="config" expanded="True">
+                <Node name="db.properties" selected="True" />
+              </Node>
+              <Node name="dao" expanded="True" />
+              <Node name="entity" expanded="True" />
+              <Node name="mainmod" expanded="True" />
+              <Node name="myexceptions" expanded="True" />
+              <Node name="util" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.InsuranceManagementSystem PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
