@@ -1,7 +1,6 @@
 ﻿using System;
 using CourierManagementSystem.Entities;
-using myexceptions;
-
+using CourierManagementSystem.Exceptions;
 namespace CourierManagementSystem.dao
 {
     public class CourierAdminServiceImpl : CourierUserServiceImpl, ICourierAdminService

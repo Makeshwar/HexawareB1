@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CourierManagementSystem.Entities;
-using myexceptions;
+using CourierManagementSystem.Exceptions;
 
 namespace CourierManagementSystem.dao
 {

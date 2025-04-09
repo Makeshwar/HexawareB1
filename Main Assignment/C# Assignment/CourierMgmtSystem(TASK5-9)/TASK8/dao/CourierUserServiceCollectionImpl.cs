@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CourierManagementSystem.Entities;
-using myexceptions;
+using CourierManagementSystem.Exceptions;
 
 namespace CourierManagementSystem.dao
 {
