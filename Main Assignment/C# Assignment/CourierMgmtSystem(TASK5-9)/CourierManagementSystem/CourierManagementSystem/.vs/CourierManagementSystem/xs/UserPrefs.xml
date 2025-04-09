@@ -1,0 +1,49 @@
+﻿<Properties StartupConfiguration="{0A77A290-7276-41C8-8A51-9D6FDBD05D6A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Exceptions/TrackingNumberNotFoundException.cs">
+    <Files>
+      <File FileName="config/db.properties" Line="4" Column="18" />
+      <File FileName="dao/CourierAdminServiceCollectionImpl.cs" Line="4" Column="1" />
+      <File FileName="dao/ICourierAdminService.cs" Line="9" Column="2" />
+      <File FileName="Entities/Courier.cs" Line="17" Column="40" />
+      <File FileName="Entities/CourierCompany.cs" Line="30" Column="1" />
+      <File FileName="Entities/CourierCompanyCollection.cs" Line="27" Column="6" />
+      <File FileName="Entities/Employee.cs" Line="27" Column="1" />
+      <File FileName="Entities/Location.cs" Line="33" Column="1" />
+      <File FileName="Entities/Payment.cs" Line="1" Column="1" />
+      <File FileName="Entities/User.cs" Line="1" Column="1" />
+      <File FileName="Exceptions/InvalidEmployeeIdException.cs" Line="3" Column="35" />
+      <File FileName="Exceptions/TrackingNumberNotFoundException.cs" Line="3" Column="35" />
+      <File FileName="dao/CourierAdminServiceImpl.cs" Line="4" Column="1" />
+      <File FileName="dao/CourierUserServiceCollectionImpl.cs" Line="5" Column="42" />
+      <File FileName="dao/CourierUserServiceImpl.cs" Line="5" Column="1" />
+      <File FileName="dao/ICourierUserService.cs" Line="16" Column="2" />
+      <File FileName="DB/CourierServiceDb.cs" Line="6" Column="1" />
+      <File FileName="DB/DBConnection.cs" Line="17" Column="2" />
+      <File FileName="Program.cs" Line="81" Column="69" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CourierManagementSystem" expanded="True">
+            <Node name="CourierManagementSystem" expanded="True">
+              <Node name="config" expanded="True" />
+              <Node name="dao" expanded="True" />
+              <Node name="DB" expanded="True" />
+              <Node name="Entities" expanded="True" />
+              <Node name="Exceptions" expanded="True">
+                <Node name="TrackingNumberNotFoundException.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CourierManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

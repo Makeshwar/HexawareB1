@@ -1,0 +1,46 @@
+﻿<Properties StartupConfiguration="{493E3B81-9BE6-437F-8917-F673E61A3409}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CS_MAINAPPLICATION/DB/DBConnection.cs">
+    <Files>
+      <File FileName="CS_MAINAPPLICATION/dao/CourierUserServiceImpl.cs" Line="49" Column="2" />
+      <File FileName="CS_MAINAPPLICATION/dao/CourierUserServiceCollectionImpl.cs" Line="70" Column="2" />
+      <File FileName="CS_MAINAPPLICATION/dao/ICourierAdminService.cs" Line="2" Column="1" />
+      <File FileName="CS_MAINAPPLICATION/dao/ICourierUserService.cs" Line="3" Column="1" />
+      <File FileName="CS_MAINAPPLICATION/Exceptions/InvalidEmployeeIdException.cs" Line="11" Column="2" />
+      <File FileName="CS_MAINAPPLICATION/Entities/CourierCompanyCollection.cs" Line="25" Column="2" />
+      <File FileName="CS_MAINAPPLICATION/Entities/CourierCompany.cs" Line="38" Column="6" />
+      <File FileName="CS_MAINAPPLICATION/Entities/Courier.cs" Line="66" Column="10" />
+      <File FileName="CS_MAINAPPLICATION/Entities/Employee.cs" Line="35" Column="10" />
+      <File FileName="CS_MAINAPPLICATION/Entities/Location.cs" Line="26" Column="10" />
+      <File FileName="CS_MAINAPPLICATION/Entities/Payment.cs" Line="29" Column="10" />
+      <File FileName="CS_MAINAPPLICATION/db.properties" Line="1" Column="96" />
+      <File FileName="CS_MAINAPPLICATION/Program.cs" Line="41" Column="24" />
+      <File FileName="CS_MAINAPPLICATION/DB/CourierServiceDb.cs" Line="1" Column="1" />
+      <File FileName="CS_MAINAPPLICATION/DB/DBConnection.cs" Line="37" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CourierManagementSystem" expanded="True">
+            <Node name="CourierManagementSystem" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="config" expanded="True" />
+              <Node name="dao" expanded="True" />
+              <Node name="DB" expanded="True">
+                <Node name="DBConnection.cs" selected="True" />
+              </Node>
+              <Node name="Entities" expanded="True" />
+              <Node name="Exceptions" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CourierManagementSystem PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
