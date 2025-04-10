@@ -1,0 +1,54 @@
+﻿<Properties StartupConfiguration="{CDF41B7A-0FDE-43B0-B930-7DEF865918CB}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DigitalAssetManagement/dao/AssetManagementServiceImpl.cs">
+    <Files>
+      <File FileName="DigitalAssetManagement/entity/Asset.cs" Line="13" Column="1" />
+      <File FileName="DigitalAssetManagement/dao/AssetManagementServiceImpl.cs" Line="13" Column="16" />
+      <File FileName="DigitalAssetManagement/config/db.properties" />
+      <File FileName="DigitalAssetManagement/dao/IAssetManagementService.cs" />
+      <File FileName="DigitalAssetManagement/myexceptions/AssetNotFoundException.cs" Line="1" Column="1" />
+      <File FileName="DigitalAssetManagement/myexceptions/AssetNotMaintainException.cs" />
+      <File FileName="DigitalAssetManagement/entity/AssetAllocation.cs" />
+      <File FileName="DigitalAssetManagement/entity/Employee.cs" />
+      <File FileName="DigitalAssetManagement/entity/MaintenanceRecord.cs" />
+      <File FileName="DigitalAssetManagement/entity/Reservation.cs" />
+      <File FileName="DigitalAssetManagement.Tests/AssetManagementServiceTests.cs" />
+      <File FileName="DigitalAssetManagement/app/AssetManagementApp.cs" Line="20" Column="56" />
+      <File FileName="DigitalAssetManagement/util/DBConnection.cs" Line="33" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DigitalAssetManagement" expanded="True">
+            <Node name="DigitalAssetManagement" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" expanded="True" />
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="app" expanded="True" />
+              <Node name="config" expanded="True" />
+              <Node name="dao" expanded="True">
+                <Node name="AssetManagementServiceImpl.cs" selected="True" />
+              </Node>
+              <Node name="entity" expanded="True" />
+              <Node name="myexceptions" expanded="True" />
+              <Node name="util" expanded="True" />
+            </Node>
+            <Node name="DigitalAssetManagement.Tests" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="ProjectDependencies" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.DigitalAssetManagement.Tests PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.DigitalAssetManagement PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
