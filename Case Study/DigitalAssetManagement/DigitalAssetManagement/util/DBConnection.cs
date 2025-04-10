@@ -28,7 +28,6 @@ namespace DigitalAssetManagement.util
                 }
             }
 
-
             return connection;
         }
     }

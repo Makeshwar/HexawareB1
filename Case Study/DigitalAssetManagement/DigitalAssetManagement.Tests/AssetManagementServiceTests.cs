@@ -22,8 +22,7 @@ namespace DigitalAssetManagement.Tests
         [Test]
         public void Test_AddAsset_Success()
         {
-            Asset asset = new Asset
-            {
+            Asset asset = new Asset {
                 Name = "Test Asset",
                 Type = "Laptop",
                 SerialNumber = "TEST123456",

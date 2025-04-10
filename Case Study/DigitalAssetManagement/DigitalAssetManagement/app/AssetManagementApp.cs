@@ -9,11 +9,13 @@ namespace DigitalAssetManagement.app
     {
         public static void Main(string[] args)
         {
+
             IAssetManagementService service = new AssetManagementServiceImpl();
 
             while (true)
             {
-                Console.WriteLine("--- Digital Asset Management System ---");
+
+                Console.WriteLine("Digital Asset Management System");
                 Console.WriteLine("1. Add Asset");
                 Console.WriteLine("2. Update Asset");
                 Console.WriteLine("3. Delete Asset");
@@ -74,7 +76,6 @@ namespace DigitalAssetManagement.app
 
                             service.UpdateAsset(upAsset);
                             break;
-
 
 
                         case 3:
@@ -138,7 +139,6 @@ namespace DigitalAssetManagement.app
                             int reservationId = int.Parse(Console.ReadLine());
                             service.WithdrawReservation(reservationId);
                             break;
-
 
 
                         default:

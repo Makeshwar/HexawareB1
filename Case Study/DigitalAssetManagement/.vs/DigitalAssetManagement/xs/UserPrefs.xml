@@ -1,49 +1,49 @@
 ﻿<Properties StartupConfiguration="{CDF41B7A-0FDE-43B0-B930-7DEF865918CB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DigitalAssetManagement/dao/AssetManagementServiceImpl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DigitalAssetManagement/app/AssetManagementApp.cs">
     <Files>
-      <File FileName="DigitalAssetManagement/entity/Asset.cs" Line="13" Column="1" />
-      <File FileName="DigitalAssetManagement/dao/AssetManagementServiceImpl.cs" Line="13" Column="16" />
+      <File FileName="DigitalAssetManagement/entity/Asset.cs" Line="22" Column="1" />
+      <File FileName="DigitalAssetManagement/dao/AssetManagementServiceImpl.cs" Line="131" Column="50" />
       <File FileName="DigitalAssetManagement/config/db.properties" />
-      <File FileName="DigitalAssetManagement/dao/IAssetManagementService.cs" />
-      <File FileName="DigitalAssetManagement/myexceptions/AssetNotFoundException.cs" Line="1" Column="1" />
-      <File FileName="DigitalAssetManagement/myexceptions/AssetNotMaintainException.cs" />
+      <File FileName="DigitalAssetManagement/dao/IAssetManagementService.cs" Line="7" Column="1" />
+      <File FileName="DigitalAssetManagement/myexceptions/AssetNotMaintainException.cs" Line="6" Column="6" />
       <File FileName="DigitalAssetManagement/entity/AssetAllocation.cs" />
       <File FileName="DigitalAssetManagement/entity/Employee.cs" />
-      <File FileName="DigitalAssetManagement/entity/MaintenanceRecord.cs" />
+      <File FileName="DigitalAssetManagement/entity/MaintenanceRecord.cs" Line="21" Column="1" />
       <File FileName="DigitalAssetManagement/entity/Reservation.cs" />
       <File FileName="DigitalAssetManagement.Tests/AssetManagementServiceTests.cs" />
-      <File FileName="DigitalAssetManagement/app/AssetManagementApp.cs" Line="20" Column="56" />
-      <File FileName="DigitalAssetManagement/util/DBConnection.cs" Line="33" Column="10" />
+      <File FileName="DigitalAssetManagement/app/AssetManagementApp.cs" Line="74" Column="46" />
+      <File FileName="DigitalAssetManagement/util/DBConnection.cs" />
+      <File FileName="DigitalAssetManagement.Tests/obj/Debug/net8.0/DigitalAssetManagement.Tests.GlobalUsings.g.cs" />
+      <File FileName="DigitalAssetManagement.Tests/DigitalAssetManagement.Tests.csproj" />
+      <File FileName="DigitalAssetManagement/myexceptions/AssetNotFoundException.cs" Line="13" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="DigitalAssetManagement" expanded="True">
             <Node name="DigitalAssetManagement" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="FrameworkReferences" expanded="True" />
-                <Node name="PackageDependencies" expanded="True" />
+              <Node name="app" expanded="True">
+                <Node name="AssetManagementApp.cs" selected="True" />
               </Node>
-              <Node name="app" expanded="True" />
               <Node name="config" expanded="True" />
-              <Node name="dao" expanded="True">
-                <Node name="AssetManagementServiceImpl.cs" selected="True" />
-              </Node>
+              <Node name="dao" expanded="True" />
               <Node name="entity" expanded="True" />
               <Node name="myexceptions" expanded="True" />
               <Node name="util" expanded="True" />
             </Node>
             <Node name="DigitalAssetManagement.Tests" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="ProjectDependencies" expanded="True" />
-              </Node>
+              <Node name="Dependencies" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="DigitalAssetManagement" expanded="True" selected="True" />
+        </State>
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.DigitalAssetManagement.Tests PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.DigitalAssetManagement PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
